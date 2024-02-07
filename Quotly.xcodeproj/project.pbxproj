@@ -12,7 +12,7 @@
 		AA76A6522B72BC1A0051A4C2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA76A6512B72BC1A0051A4C2 /* ContentView.swift */; };
 		AA76A6542B72BC1B0051A4C2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA76A6532B72BC1B0051A4C2 /* Assets.xcassets */; };
 		AA76A6572B72BC1B0051A4C2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA76A6562B72BC1B0051A4C2 /* Preview Assets.xcassets */; };
-		AA76A6622B72BC1B0051A4C2 /* QuotlyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA76A6612B72BC1B0051A4C2 /* QuotlyTests.swift */; };
+		AA76A66C2B72C2C10051A4C2 /* QuoteProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA76A66B2B72C2C10051A4C2 /* QuoteProvider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,7 +34,7 @@
 		AA76A6562B72BC1B0051A4C2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		AA76A6582B72BC1B0051A4C2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AA76A65D2B72BC1B0051A4C2 /* QuotlyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QuotlyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		AA76A6612B72BC1B0051A4C2 /* QuotlyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotlyTests.swift; sourceTree = "<group>"; };
+		AA76A66B2B72C2C10051A4C2 /* QuoteProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteProvider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,7 +61,6 @@
 			children = (
 				AA76A64A2B72BC1A0051A4C2 /* Quotly */,
 				AA76A64B2B72BC1A0051A4C2 /* Packages */,
-				AA76A6602B72BC1B0051A4C2 /* QuotlyTests */,
 				AA76A6492B72BC1A0051A4C2 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -83,6 +82,7 @@
 				AA76A6532B72BC1B0051A4C2 /* Assets.xcassets */,
 				AA76A6582B72BC1B0051A4C2 /* Info.plist */,
 				AA76A6552B72BC1B0051A4C2 /* Preview Content */,
+				AA76A66B2B72C2C10051A4C2 /* QuoteProvider.swift */,
 			);
 			path = Quotly;
 			sourceTree = "<group>";
@@ -101,14 +101,6 @@
 				AA76A6562B72BC1B0051A4C2 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		AA76A6602B72BC1B0051A4C2 /* QuotlyTests */ = {
-			isa = PBXGroup;
-			children = (
-				AA76A6612B72BC1B0051A4C2 /* QuotlyTests.swift */,
-			);
-			path = QuotlyTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -214,6 +206,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA76A66C2B72C2C10051A4C2 /* QuoteProvider.swift in Sources */,
 				AA76A6522B72BC1A0051A4C2 /* ContentView.swift in Sources */,
 				AA76A6502B72BC1A0051A4C2 /* QuotlyApp.swift in Sources */,
 			);
@@ -223,7 +216,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AA76A6622B72BC1B0051A4C2 /* QuotlyTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

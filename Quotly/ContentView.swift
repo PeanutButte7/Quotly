@@ -1,23 +1,50 @@
-//
-//  ContentView.swift
-//  Quotly
-//
-//  Created by Adam Barta on 06.02.2024.
-//
-
 import SwiftUI
 import RealityKit
 import RealityKitContent
 
 struct ContentView: View {
+    @StateObject private var quotesProvider = QuotesProvider()
+    
+    // Track the offset during drag
+    @State private var dragOffset: CGFloat = 0
+    
     var body: some View {
-        VStack {
-            Model3D(named: "Scene", bundle: realityKitContentBundle)
-                .padding(.bottom, 50)
-
-            Text("Hello, world!")
+        HStack(alignment: .center) {
+            VStack(spacing: 0.0) {
+                Text(quotesProvider.currentQuote.quote)
+                    .font(.title)
+                    .fontWeight(.medium)
+                    .multilineTextAlignment(.center)
+                    .padding()
+                Text("– " + quotesProvider.currentQuote.author)
+                    .font(.subheadline)
+            }
+            Button("Next quote", systemImage: "chevron.right", action: {
+                withAnimation {
+                    quotesProvider.changeQuote()
+                }
+            })
+            .help("You can also swipe on the text")
+            .labelStyle(.iconOnly)
+            .buttonBorderShape(.circle)
+            .controlSize(.regular)
         }
-        .padding()
+        .padding(.all, 20.0)
+        .offset(x: dragOffset) // Apply the offset here
+        .gesture(
+            DragGesture()
+                .onChanged { gesture in
+                    dragOffset = gesture.translation.width
+                }
+                .onEnded { value in
+                    if value.translation.width > 100 { // Threshold to trigger the change
+                        withAnimation {
+                            quotesProvider.changeQuote()
+                        }
+                    }
+                    dragOffset = 0 // Reset the offset
+                }
+        )
     }
 }
 
