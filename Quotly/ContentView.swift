@@ -16,9 +16,12 @@ struct ContentView: View {
                     .fontWeight(.medium)
                     .multilineTextAlignment(.center)
                     .padding()
+                
                 Text("– " + quotesProvider.currentQuote.author)
                     .font(.subheadline)
+                    
             }
+            
             Button("Next quote", systemImage: "chevron.right", action: {
                 withAnimation {
                     quotesProvider.changeQuote()
@@ -29,12 +32,16 @@ struct ContentView: View {
             .buttonBorderShape(.circle)
             .controlSize(.regular)
         }
+        .transition(.opacity)
+        .animation(.default, value: quotesProvider.currentQuote)
         .padding(.all, 20.0)
         .offset(x: dragOffset) // Apply the offset here
         .gesture(
             DragGesture()
                 .onChanged { gesture in
-                    dragOffset = gesture.translation.width
+                    if (gesture.translation.width >= 0) {
+                        dragOffset = gesture.translation.width
+                    }
                 }
                 .onEnded { value in
                     if value.translation.width > 100 { // Threshold to trigger the change

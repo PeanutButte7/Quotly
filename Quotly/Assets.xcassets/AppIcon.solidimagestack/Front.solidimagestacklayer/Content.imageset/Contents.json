@@ -1,6 +1,7 @@
 {
   "images" : [
     {
+      "filename" : "VisionOS Icon Front.png",
       "idiom" : "vision",
       "scale" : "2x"
     }
